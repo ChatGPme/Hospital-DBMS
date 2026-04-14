@@ -1,0 +1,53 @@
+<mxfile>
+  <diagram name="Hospital ERD">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- PATIENT -->
+        <mxCell id="patient" value="PATIENT&#xa;Patient_ID (PK)&#xa;Name&#xa;Gender&#xa;DOB&#xa;Address&#xa;Phone" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="200" width="180" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- DOCTOR -->
+        <mxCell id="doctor" value="DOCTOR&#xa;Doctor_ID (PK)&#xa;Name&#xa;Specialization&#xa;Phone" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="50" width="180" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- APPOINTMENT -->
+        <mxCell id="appointment" value="APPOINTMENT&#xa;Appointment_ID (PK)&#xa;Patient_ID (FK)&#xa;Doctor_ID (FK)&#xa;Date&#xa;Status" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="200" width="200" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- MEDICAL RECORD -->
+        <mxCell id="record" value="MEDICAL_RECORD&#xa;Record_ID (PK)&#xa;Patient_ID (FK)&#xa;Diagnosis&#xa;Treatment&#xa;Date" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="400" width="200" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- BILLING -->
+        <mxCell id="billing" value="BILLING&#xa;Bill_ID (PK)&#xa;Patient_ID (FK)&#xa;Amount&#xa;Payment_Status&#xa;Date" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="400" width="200" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- CONNECTIONS -->
+        <mxCell id="p_a" style="endArrow=block;" edge="1" parent="1" source="patient" target="appointment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="d_a" style="endArrow=block;" edge="1" parent="1" source="doctor" target="appointment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p_r" style="endArrow=block;" edge="1" parent="1" source="patient" target="record">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="p_b" style="endArrow=block;" edge="1" parent="1" source="patient" target="billing">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
